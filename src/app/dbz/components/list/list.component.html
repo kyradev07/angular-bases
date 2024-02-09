@@ -1,0 +1,14 @@
+<h4 *ngIf="characterList.length !== 0; else emptyList">List</h4>
+<ng-template #emptyList>
+  <h4>¡Ups!...Empty List</h4>
+</ng-template>
+<ul class="list-group">
+  <ng-container *ngFor="let character of characterList; index as i; first as isFirst; last as isLast; even as isEven">
+      <li class="list-group-item d-flex justify-content-between align-items-center" [ngClass]="{'list-group-item-success': isFirst, 'list-group-item-dark': isLast}">
+        <div>
+          {{i}}. {{character.name}} - <b>Power: </b>{{character.power}}
+        </div>
+        <button (click)="deleteCharacter(character.id)" class="btn btn-sm btn-danger">X</button>
+      </li>
+  </ng-container>
+</ul>

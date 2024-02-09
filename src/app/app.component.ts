@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title: string = 'I am here studying more Angular';
+  title: string = 'Angular v.17';
 }
